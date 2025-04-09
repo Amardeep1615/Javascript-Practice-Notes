@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+ <script>  
+
+console.log("Hello World");
+// Hello world program
+
+//Example 1 (var)
+var number = 20;
+console.log(number); //20
+//Example 2
+var number = 20;//Declaration
+var number = 30;//Re-declaration
+console.log(number);//30
+//Example 3
+var number = 20;//Declaration
+var number = 30;//Re-declaration
+
+var num;//Declartion
+num = 20;//Assignment
+num = 40;//Re-Assignment
+console.log(number); //30(acess the value in number)
+console.log(num); // 40 (acess the value in num)
+
+// Example 4 (let)
+let a = 50; //Declaration
+console.log(a); //50
+//Example 5
+let b = 15; //Declaration
+b = 60; //Re-Assignment
+console.log(b); //60
+//Re-Declaration is not possible
+//Example 6
+let c; //Declaration
+c = 25; //Re-Assignment
+console.log(c); //25
+
+//Example 7 (const)
+const d = 20; //Declaration
+console.log(d); //20
+//Example 8
+const e = 20; //Declaration\
+ //Re-Assignment (**Cannot Reassign)**
+console.log(e); //theory.html:68 Uncaught TypeError: Assignment to constant variable.
+//Example 9
+const f=38; //Declaration //SyntaxError: Missing initializer in const declaration
+//Example 10
+const g = 20; //Declaration
+ //Re-Declaration (**Cannot Re-declare)**Uncaught SyntaxError: Identifier 'g' has already been declared.
+
+//................................................Scope of Variables ...........................................................................................................
+//***var – Function Scoped***
+//var is function-scoped and hoisted (moved to the top of its scope). It doesn't respect block scope (like if, for blocks).
+//Example 1
+function test(){
+   var a = 60;
+   console.log(a); //60
+}
+test();
+
+//Example 2
+function test(){
+   var k = 45;
+}
+//console.log(k); //k is not defined
+
+//Example 3
+if(true){
+   var x = 5;
+}
+console.log(x); //5
+
+//Example 4
+console.log(y);
+var y = 13; //undefined (Hoisting process takes place)
+
+//Example 5
+for (var i = 0; i<3,i++;) {
+
+}
+console.log(i); //1
+
+//Example 6
+var j = 1;
+var j = 2;
+console.log(j); //2
+
+//***let – Block Scoped***
+//let is block-scoped and not hoisted in a usable way. It’s the preferred way to declare mutable variables.
+//Example 1
+if (true){
+   let z = 34;
+   console.log(z); //34
+}
+
+//Example 2
+if(true) {
+   let t = 65;
+}
+//console.log(t); //t is not defined
+
+//Example 3
+//console.log(v);
+  //let v = 56; //cannot access 'v' before initialization (Hoisting not possible)
+
+//Example 4
+let u = 8;
+//let u = 9; //syntax error
+
+//Example 5
+let h = 10;
+h = 20;
+console.log(h); // 20
+
+//***const – Block Scoped, Constant***
+//const is block-scoped like let, but you cannot reassign a new value to it after initialization.
+//Example 1
+if (true) {
+  const x = 100;
+  console.log(x); // 100
+}
+
+//Example 2
+{
+  const l = 20;
+}
+ console.log(l); // ReferenceError l is not defined
+ 
+//Example 3
+console.log(b); // ReferenceError (Hoisting not possible)
+//const b = 6;
+
+
+
+
+</script>  
+</body>
+</html>
+
