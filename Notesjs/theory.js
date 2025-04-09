@@ -50,7 +50,7 @@
 
 //Variables declared with const cannot be Redeclared,Reassigned in the same scope
 
-//................................................Scope of Variables ...........................................................................................................
+//.................................................Scope of Variables ...........................................................................................................
 // They are 3 types of scope in JavaScript
 //1. Global Scope : Variables declared outside any function/block. Accessible everywhere.
 //2. Function Scope,Local Scope:Variables declared inside a function. Accessible only within that function.
