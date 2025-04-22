@@ -128,14 +128,522 @@ if (true) {
 }
 
 //Example 2
-{
-  const l = 20;
-}
- console.log(l); // ReferenceError l is not defined
+//{
+ // const l = 20;
+//}
+ //console.log(l); // ReferenceError l is not defined
  
 //Example 3
 console.log(b); // ReferenceError (Hoisting not possible)
 //const b = 6;
+
+//...................................................Day 4 ...........................................................................................................
+//.............................................Javascript Datatypes.......................................................................................................
+// Number:
+let length = 16;
+let weight = 7.5;
+
+// Strings:
+let color = "Yellow";
+let lastName = "Johnson";
+
+// Booleans
+let x1 = true;
+let y2 = false;
+
+// Object:
+const person1 = {firstName:"John", lastName:"Doe"};
+
+// Array object:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// Date object:
+const date = new Date("2022-03-25");
+
+// Examples of JavaScript data types
+let str = "Hello, world!"; // String
+let num3 = 42; // Number
+let bigInt = 123456789012345678901234567890n; // BigInt
+let bool = true; // Boolean
+let nul = null; // Null
+let undef; // Undefined
+let sym = Symbol("description"); // Symbol
+let obj = { key: "value" }; // Object
+let arr = [1, 2, 3]; // Array (an object)
+
+// Primitive Data Type
+// 1. Number
+// The Number data type in JavaScript includes both integers and floating-point numbers. Special values like Infinity, -Infinity, and NaN represent infinite values and computational errors, respectively.
+let n1 = 2;
+console.log(n1) //2
+
+let n2 = 1.3;
+console.log(n2) //1.3
+
+let n3 = Infinity;
+console.log(n3)  //Infinity
+
+let n4 = 'something here too' / 2;
+console.log(n4) //NaN
+
+Boolean:
+// Logical true/false values
+//let isActive = true;
+//let isAdmin = false;
+
+Undefined:
+// A variable that has been declared but not assigned
+//let z;
+//console.log(z); // undefined
+
+Null:
+// Represents intentional absence of any object value
+//let emptyValue = null;
+
+Symbol:
+// Unique and immutable primitive (ES6)
+//let id = Symbol("unique identifier");
+
+// Structural (Non-Primitive) Data Types
+ Object:
+// Collection of key-value pairs
+//let person = {
+ //   name: "Alice",
+   // age: 25,
+    //isStudent: true
+//};
+Array:
+// Ordered collection of values
+//let colors = ["red", "green", "blue"];
+//let mixed = [1, "text", true, null];
+ Map:
+// Key-value pairs with any data type as keys (ES6)
+//let map = new Map();
+//map.set("name", "John");
+//map.set(1, "One");
+Set:
+// Collection of unique values (ES6)
+//let set = new Set();
+//set.add(1);
+//set.add(2);
+//set.add(1); // Won't be added (duplicate)
+//  Structural Root Primitive
+// Function
+// Callable object that executes a block of code
+function greet(name) {
+    return `Hello ${name}`;
+}
+
+// Also an object type
+console.log(typeof greet); // "function" (special case)
+// Type Checking
+// Use typeof operator to check types:
+typeof "text"      // "string"
+typeof 42         // "number"
+typeof 42n        // "bigint"
+typeof true       // "boolean"
+typeof undefined  // "undefined"
+typeof null       // "object" (historical bug)
+typeof {a: 1}     // "object"
+typeof [1, 2]     // "object" (use Array.isArray())
+typeof Symbol()   // "symbol"
+typeof function(){} // "function"
+// Type Conversion
+// JavaScript performs automatic type conversion :
+
+//javascript
+let value = "5" + 2;    // "52" (string concatenation)
+let value2 = "5" - 2;   // 3 (numeric subtraction)
+// Explicit conversion:
+
+String(123);     // "123"
+Number("123");   // 123
+Boolean(1);      // true
+
+//........................................................Day 5 ...........................................................................................................
+//................................................Javascript Operators.............................................................................................................
+//  JavaScript Arithmetic Operators
+// Arithmetic Operators are used to perform arithmetic on numbers:
+// Arithmetic Operators Example
+//let a1 = 3;
+//let x = (100 + 50) * a1;
+
+//Operator  	Description
+//+	            Addition
+//-	            Subtraction
+//*	            Multiplication
+//**	            Exponentiation (ES2016)
+// /	            Division
+//%	            Modulus (Division) //Remainder
+//++	            Increment
+//--	            Decrement
+const sum = 5 + 3; // Addition
+const diff = 10 - 2; // Subtraction
+const p = 4 * 2; // Multiplication
+const q = 8 / 2; // Division
+console.log(sum, diff, p, q); 
+// + adds two numbers.
+// – subtracts the second number from the first.
+// * multiplies two numbers.
+// / divides the first number by the second.
+
+// javaScript Assignment Operators
+// Assignment operators assign values to JavaScript variables.
+// The Addition Assignment Operator (+=) adds a value to a variable.
+//Assignment
+//let x = 10;
+//x += 5;
+
+let n = 10;
+n += 5;
+n *= 2;
+console.log(n);//30
+
+
+// Operator 	Example	Same As
+// =	          x = y	x = y
+// +=	          x += y	x = x + y
+// -=	          x -= y	x = x - y
+// *=	          x *= y	x = x * y
+// /=	          x /= y	x = x / y
+// %=	          x %= y	x = x % y
+// **=          x **= y	x = x ** y
+
+// JavaScript Comparison Operators
+// Operator	    Description
+// ==	          equal to
+// ===	       equal value and equal type
+// !=	          not equal
+// !==	       not equal value or not equal type
+// >	          greater than
+// <	          less than
+// >=	          greater than or equal to
+// <=	          less than or equal to
+// ?	          ternary operator
+console.log(10 > 5); //T
+console.log(10 === "10");//F
+
+// JavaScript Logical Operators
+// Operator  	Description
+// &&	        logical and
+// ||	        logical or
+// !	        logical not
+const a3 = true, b3 = false;
+console.log(a3 && b3); // Logical AND //F
+console.log(a3 || b3); // Logical OR  //T
+
+
+// JavaScript Type Operators
+// Operator	   Description
+// typeof	   Returns the type of a variable
+// instanceof	Returns true if an object is an instance of an object type
+
+// JavaScript Bitwise Operators
+// Bit operators work on 32 bits numbers.
+const res = 5 & 1; // Bitwise AND
+console.log(res); //1
+
+
+// Any numeric operand in the operation is converted into a 32 bit number. The result is converted back to a JavaScript number.
+// Operator	Description	Example	Same as	Result	Decimal
+// &	AND	5 & 1	0101 & 0001	0001	 1
+// |	OR	5 | 1	0101 | 0001	0101	 5
+// ~	NOT	~ 5	 ~0101	1010	 10
+// ^	XOR	5 ^ 1	0101 ^ 0001	0100	 4
+// <<	left shift	5 << 1	0101 << 1	1010	 10
+// >>	right shift	5 >> 1	0101 >> 1	0010	  2
+// >>>	unsigned right shift	5 >>> 1	0101 >>> 1	0010	  2
+
+// JavaScript Ternary Operator
+// The ternary operator is a shorthand for conditional statements. It takes three operands.
+const age = 18;
+const status = age >= 18 ? "Adult" : "Minor";
+console.log(status);
+
+// JavaScript Unary Operators
+// Unary operators operate on a single operand (e.g., increment, decrement).
+let xx= 5;
+console.log(++xx); // Pre-increment
+console.log(xx--); // Post-decrement (Output: 6, then x becomes 5)
+
+//JavaScript String Operators
+//JavaScript String Operators include concatenation (+) and concatenation assignment (+=), used to join strings or combine strings with other data types.
+const s = "Hello" + " " + "World";
+console.log(s); //Hello World
+
+
+
+
+//........................................................Day 6 ...........................................................................................................
+//................................................Javascript Type Casting.............................................................................................................
+// JavaScript Type Conversion
+// In JavaScript Type Conversion can be defined as converting the data type of the variables from one type to the other manually by the programmer(explicitly) or automatically by the JavaScript(implicitly).
+
+// Converting Strings to Numbers
+// Converting Numbers to Strings
+// Converting Dates to Numbers
+// Converting Numbers to Dates
+// Converting Booleans to Numbers
+// Converting Numbers to Booleans
+
+// Implicit Type Conversion (Coercion): Implicit Type Conversion occurs automatically by the JavaScript.
+// Explicit Type Conversion: Explicit Type Conversion occurs when the programmer manually changes the type of the variables using the function Number(), String(), and Boolean().
+// Implicit Type Conversion (Coercion)
+// In JavaScript, the implicit type conversion or coercion conversion can be defined as the automatic conversion of the data type of the variables from one type to another type. Implicit type conversion mostly occurs when we are performing the arithmetic or the logical operations.
+
+//String + Number (Concatenation)
+// When we add a string with the number, the JavaScript automatically converts the number into a string and performs string concatenation.
+let res1 = 5 + "5";  
+console.log(res1);  //55
+
+// Boolean to Number
+// When we perform the mathematical operations, then JavaScript automatically converts true to 1 and false to 0.
+let res2 = true + 1;  
+console.log(res2); //2
+
+// Equality Comparison (==)
+// When we use the equality operator in the JavaScript, it compares them after converting the value into the same data type.
+let res3 = (5 == "5");  
+console.log(res3); //true
+
+// Explicit Type Conversion
+// In JavaScript, explicit type conversion can be defined as when we manually change the data type of the variable from one to other using some built-in JavaScript functions. JavaScript provides us the built-in functions for performing the explicit conversion.
+// Converting to String
+// In JavaScript, we can convert the value into a string using the String() function, toString(), and by concatenating the empty string.
+let n6 = 123;
+let s1 = String(n6);  
+let s2 = n6.toString();  
+console.log(s1)
+console.log(s2) // 123 123
+
+
+//........................................................Day 7 ...........................................................................................................
+//.............................................Javascript Control Statements .............................................................................................................
+// JavaScript if, else, and else if
+// Conditional statements are used to perform different actions based on different conditions.
+// Conditional Statements
+// Very often when you write code, you want to perform different actions for different decisions.
+// You can use conditional statements in your code to do this.
+// In JavaScript we have the following conditional statements:
+// Use if to specify a block of code to be executed, if a specified condition is true
+// Use else to specify a block of code to be executed, if the same condition is false
+// Use else if to specify a new condition to test, if the first condition is false
+// Use switch to specify many alternative blocks of code to be executed
+
+// The if Statement
+// Use the if statement to specify a block of JavaScript code to be executed if a condition is true.
+//Syntax
+//if () {
+  //  block of code to be executed if the condition is true
+//}
+// if (hour < 18) {
+//   greeting = "Good day";
+// }
+
+let xy = 20;
+
+if (xy % 2 === 0) {
+    console.log("Even");
+}
+
+if (xy % 2 !== 0) {
+    console.log("Odd");
+};
+
+
+// The else Statement
+// Use the else statement to specify a block of code to be executed if the condition is false.
+
+//if () {
+  //  block of code to be executed if the condition is true
+//} else {
+  //  block of code to be executed if the condition is false
+//}
+let shoppingDone = false;
+let childsAllowance;
+
+if (shoppingDone === true) {
+  childsAllowance = 10;
+} else {
+  childsAllowance = 5;
+} 
+
+//Example
+// If the hour is less than 18, create a "Good day" greeting, otherwise "Good evening":
+
+// if (hour < 18) {
+//   greeting = "Good day";
+// } else {
+//   greeting = "Good evening";
+// }
+
+let age2 = 25;
+
+if (age2 >= 18) {
+    console.log("Adult")
+} else {
+    console.log("Not an Adult")
+};
+
+//Nested if-else Statement
+let number3 = 10;
+
+if (number3 > 0) {
+  if (number % 2 === 0) {
+    console.log("The number is positive and even.");
+  } else {
+    console.log("The number is positive and odd.");
+  }
+} else if (number3 < 0) {
+  console.log("The number is negative.");
+} else {
+  console.log("The number is zero.");
+}
+
+let score = 85;
+let grade;
+
+if (score >= 90) {
+  grade = 'A';
+} else {
+  if (score >= 80) {
+    grade = 'B';
+  } else {
+    if (score >= 70) {
+      grade = 'C';
+    } else {
+      if (score >= 60) {
+        grade = 'D';
+      } else {
+        grade = 'F';
+      }
+    }
+  }
+}
+
+console.log("The grade is: " + grade);
+
+let username = "admin";
+let password = "password123";
+
+if (username === "admin") {
+  if (password === "password123") {
+    console.log("Authentication successful!");
+  } else {
+    console.log("Incorrect password.");
+  }
+} else {
+  console.log("Incorrect username.");
+}
+
+
+// The else if Statement
+// Use the else if statement to specify a new condition if the first condition is false.
+
+//Syntax
+// if (condition1) {
+//   //  block of code to be executed if condition1 is true
+// } else if (condition2) {
+//   //  block of code to be executed if the condition1 is false and condition2 is true
+// } else {
+//   //  block of code to be executed if the condition1 is false and condition2 is false
+// }
+// Example
+// // If time is less than 10:00, create a "Good morning" greeting, if not, but time is less than 20:00, create a "Good day" greeting, otherwise a "Good evening":
+
+// if (time < 10) {
+//   greeting = "Good morning";
+// } else if (time < 20) {
+//   greeting = "Good day";
+// } else {
+//   greeting = "Good evening";
+// }
+
+const xz = 0;
+
+if (xz > 0) {
+    console.log("Positive.");
+} else if (xz < 0) {
+    console.log("Negative.");
+} else {
+    console.log("Zero.");
+};
+
+// Using Switch Statement (JavaScript Switch Case)
+// As the number of conditions increases, you can use multiple else-if statements in JavaScript. but when we dealing with many conditions, the switch statement may be a more preferred option.
+const marks = 85;
+
+let Branch;
+
+switch (true) {
+    case marks >= 90:
+        Branch = "Computer science engineering";
+        break;
+    case marks >= 80:
+        Branch = "Mechanical engineering";
+        break;
+    case marks >= 70:
+        Branch = "Chemical engineering";
+        break;
+    case marks >= 60:
+        Branch = "Electronics and communication";
+        break;
+    case marks >= 50:
+        Branch = "Civil engineering";
+        break;
+    default:
+        Branch = "Bio technology";
+        break;
+}
+
+console.log(`Student Branch name is : ${Branch}`);
+
+const expr = "Papayas";
+switch (expr) {
+  case "Oranges":
+    console.log("Oranges are $0.59 a pound.");
+    break;
+  case "Mangoes":
+  case "Papayas":
+    console.log("Mangoes and papayas are $2.79 a pound.");
+    // Expected output: "Mangoes and papayas are $2.79 a pound."
+    break;
+  default:
+    console.log(`Sorry, we are out of ${expr}.`);
+}
+
+//........................................................Day 8 ...........................................................................................................
+//.............................................Javascript Exception Handling.............................................................................................................
+//
+
+//........................................................Day 9 ...........................................................................................................
+//...................................................Javascript Loops.............................................................................................................
+//
+
+//........................................................Day 10 ...........................................................................................................
+//.............................................Javascript Iterative Statements.............................................................................................................
+//
+
+//........................................................Day 11 ...........................................................................................................
+//..................................................Javascript Funtions-1 .............................................................................................................
+//
+
+//........................................................Day 12 ...........................................................................................................
+//................................................Javascript Functions-2 .............................................................................................................
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
