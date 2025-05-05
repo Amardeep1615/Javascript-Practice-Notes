@@ -614,19 +614,189 @@ switch (expr) {
 
 //........................................................Day 8 ...........................................................................................................
 //.............................................Javascript Exception Handling.............................................................................................................
-//
+//Exception Handling
+
+//Try Block: You place code that may potentially throw an error here.
+//Catch Block: This block executes if an error occurs in the try block.
+//finally Block: The Code inside this block will always run, whether an error occurred or not.
+
+// try {
+  // Code that may throw an error
+//} catch (error) {
+  // Code to handle the error
+//} finally {
+  // Optional: Code that runs regardless of success or error
+//}
+// Example1
+try {
+   let res = 10 / 0;
+   if (!isFinite(res)) {
+       throw new Error("Cannot divide by zero");
+   }
+   console.log(res);
+} catch (error) {
+    console.error("Error occured:", error.message);
+} finally {
+    console.log("Execution completed");
+}    //Error occurred: Cannot divide by zero
+     //Execution completed
+
+// Example2
+function check(age) {
+    if (age < 18) {
+        throw new Error("Age must be 18 or above");
+    }
+    console.log("Access granted");
+}
+try {
+     check(16);
+} catch(error) {
+   console.error(error.message);
+}  //Age must be 18 or above
+
+// Example3
+try {
+    console.log("Trying...");
+    throw new Error("An error occurred");
+} catch (error) {
+    console.error(error.message);
+} finally {
+    console.log("Cleaning up...");
+}    //Trying...
+     //An error occurred
+     //Cleaning up...
+
+     //Types of Errors in JavaScript
+//1.Syntax Errors: This happens when the code doesn’t follow the correct syntax (e.g., missing parentheses, brackets, or commas).
+//console.log("Hello World" 
+// Missing closing parenthesis
+//Output
+
+//SyntaxError: missing ) after argument list
+
+//2.Reference Errors: Occurs when we try to access a variable that hasn’t been declared.
+//console.log(x); // ReferenceError: x is not defined
+
+//3.Type Errors: This happens when a value is not of the expected type (e.g., trying to call a method on undefined).
+//let num = 5;
+//num.toUpperCase(); // TypeError: num.toUpperCase is not a function
+
+//4.Range Errors: Occurs when a value is out of range, like passing an invalid number to a function.
+//let arr = Array(-1); // RangeError: Invalid array length
+
+//5.Custom Errors: A custom error is an error that you create yourself to give more specific messages that make sense for your app. It helps you explain exactly what went wrong in a way that’s easy to understand and fix.
+//throw new Error("Custom error occurred");
 
 //........................................................Day 9 ...........................................................................................................
 //...................................................Javascript Loops.............................................................................................................
-//
+// In JavaScript, loops and iterative statements facilitate the repeated execution of code blocks. These are fundamental control flow structures used to automate repetitive tasks.
+//Types of Loops
+//1.for loop: Executes a block of code a specified number of times. It consists of three parts: initialization, condition, and increment/decrement. 
+for (let i = 0; i < 5; i++) {
+     console.log(i);
+    }
+//2.while loop: Executes a block of code as long as a specified condition is true. 
 
+    let m = 0;
+    while (m < 5) {
+      console.log(m);
+      m++;
+    }
+
+//3.do....while loop: Similar to the while loop, but it executes the code block at least once before checking the condition.
+    let l = 0;
+    do {
+      console.log(l);
+      l++;
+    } while (l < 5);
+
+//4.for...in loop: Iterates over the properties of an object.
+const obj1 = { a: 1, b: 2, c: 3 };
+for (let key in obj1) {
+  console.log(key, obj1[key]);
+
+
+//for...of loop: Iterates over the values of an iterable object (e.g., arrays, strings, maps, sets).
+const arr1 = [1, 2, 3, 4, 5];
+    for (let value of arr1) {
+      console.log(value);
+    }
 //........................................................Day 10 ...........................................................................................................
 //.............................................Javascript Iterative Statements.............................................................................................................
-//
+//Iterative Statements
+//1.Break statement: Terminates the execution of a loop prematurely.
+
+    for (let d = 0; d < 10; d++) {
+      if (d === 5) {
+        break;
+      }
+      console.log(d);
+    }
+   
+// Continue statement: Skips the current iteration of a loop and proceeds to the next one.
+
+for (let f = 0; f < 10; f++) {
+  if (f % 2 === 0) {
+    continue;
+  }
+  console.log(f);
+}
 
 //........................................................Day 11 ...........................................................................................................
 //..................................................Javascript Funtions-1 .............................................................................................................
-//
+//JavaScript functions can be categorized into several types, each with its unique characteristics and use cases: 
+
+//1.Function Declarations: Defined using the function keyword followed by a name, parameters, and the function body. They are hoisted to the top of their scope, meaning they can be called before their declaration in the code.
+function add(a, b) {
+      return a + b;
+    }
+
+//2.Function Expressions: Defined similarly to function declarations but assigned to a variable. They are not hoisted and can be anonymous (without a name)
+const multiply = function(a, b) {
+      return a * b;
+    };
+
+//3.Arrow Functions: Introduced in ES6, they provide a concise syntax for defining functions, especially for short, single-expression functions. They do not have their own this context, which can be beneficial in certain situations.
+const divide = (a, b) => a / b;
+
+//4.Anonymous Functions: Functions without a name, often used as callbacks or in situations where a function is needed only once.
+setTimeout(function() {
+      console.log("This will be logged after 1 second.");
+    }, 1000);
+
+//5.Immediately Invoked Function Expressions (IIFEs): Functions that are executed immediately after they are defined, often used to create a new scope and avoid polluting the global scope.
+    (function() {
+      var message = "Hello from IIFE";
+      console.log(message);
+    })();
+
+//6.Constructor Functions: Used to create objects, they are called with the new keyword.
+    function Person(name) {
+      this.name = name;
+    }
+    const person1 = new Person("John");
+
+//7.Generator Functions: Defined using the function* syntax, they can be paused and resumed, allowing for more control over their execution flow. They use the yield keyword to return values.
+function* numberGenerator() {
+      yield 1;
+      yield 2;
+      yield 3;
+    }
+    
+    const generator = numberGenerator();
+    console.log(generator.next().value); // 1
+    console.log(generator.next().value); // 2
+    console.log(generator.next().value); // 3
+    
+//8.Async Functions: Defined using the async keyword, they enable asynchronous behavior and allow the use of the await keyword to handle promises more easily.
+JavaScript
+
+    async function fetchData() {
+      const response = await fetch("https://example.com/data");
+      const data = await response.json();
+      return data;
+    }
+
 
 //........................................................Day 12 ...........................................................................................................
 //................................................Javascript Functions-2 .............................................................................................................
@@ -651,4 +821,3 @@ switch (expr) {
 </script>  
 </body>
 </html>
-
