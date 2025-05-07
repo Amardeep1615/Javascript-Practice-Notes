@@ -1,0 +1,268 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    DOM - Document object Model
+    1.DOM Selectors
+      1.id Selector
+      2.className Selector
+      3.element Selector
+      4.tag Selector
+      5.querySelector
+      6.querySelectorAll
+      7.add event listeners
+
+
+    2.DOM Manipulation
+      1.Create element
+      2.append child()
+      3.remove
+      4.replace
+
+    3.Attribute Manipulation
+      1.getAttribute
+      2.setAttribute
+      3.hasAttribute
+
+    4.ClassAttribute Manipulations
+      1.
+      2.
+      3.
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM Examples</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #007acc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      color: #007acc;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #444;
+    }
+
+    .example {
+      background-color: #f9f9f9;
+      border-left: 5px solid #007acc;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #005f99;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DOM - Document Object Model Examples</h1>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>1. DOM Selectors</h2>
+
+      <h3>1.1 getElementById</h3>
+      <div id="myId">Hello by ID</div>
+      <div class="example">document.getElementById("myId").style.color = "blue";</div>
+
+      <h3>1.2 getElementsByClassName</h3>
+      <div class="myClass">Class Item 1</div>
+      <div class="myClass">Class Item 2</div>
+      <div class="example">
+let items = document.getElementsByClassName("myClass");
+items[0].style.fontWeight = "bold";
+      </div>
+
+      <h3>1.3 getElementsByTagName</h3>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+      <div class="example">
+let tags = document.getElementsByTagName("p");
+tags[1].style.color = "green";
+      </div>
+
+      <h3>1.4 querySelector</h3>
+      <div class="box">Box</div>
+      <div class="example">
+document.querySelector(".box").style.border = "2px solid red";
+      </div>
+
+      <h3>1.5 querySelectorAll</h3>
+      <ul>
+        <li class="item">Item A</li>
+        <li class="item">Item B</li>
+      </ul>
+      <div class="example">
+document.querySelectorAll(".item").forEach(el => el.style.color = "purple");
+      </div>
+
+      <h3>1.6 addEventListener</h3>
+      <button id="btn">Click Me</button>
+      <div class="example">
+document.getElementById("btn").addEventListener("click", () => {
+  alert("Button clicked!");
+});
+      </div>
+    </section>
+
+    <section>
+      <h2>2. DOM Manipulation</h2>
+
+      <h3>2.1 Create Element, AppendChild</h3>
+      <div id="container"></div>
+      <div class="example">
+let newElement = document.createElement("p");
+newElement.textContent = "This is a new paragraph!";
+document.getElementById("container").appendChild(newElement);
+      </div>
+
+      <h3>2.2 Remove Element</h3>
+      <div id="removeMe">Remove this element</div>
+      <div class="example">
+document.getElementById("removeMe").remove();
+      </div>
+
+      <h3>2.3 Replace Element</h3>
+      <div id="replaceThis">Old Element</div>
+      <div class="example">
+let newDiv = document.createElement("div");
+newDiv.textContent = "New Replaced Element";
+let oldDiv = document.getElementById("replaceThis");
+oldDiv.parentNode.replaceChild(newDiv, oldDiv);
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Attribute Manipulation</h2>
+
+      <h3>3.1 getAttribute / setAttribute / hasAttribute</h3>
+      <a id="link" href="https://example.com">Visit</a>
+      <div class="example">
+let link = document.getElementById("link");
+console.log(link.getAttribute("href")); // https://example.com
+link.setAttribute("target", "_blank");
+console.log(link.hasAttribute("target")); // true
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Class Attribute Manipulation</h2>
+      <div id="classBox" class="highlight">Class Box</div>
+      <div class="example">
+let box = document.getElementById("classBox");
+// Add Class
+box.classList.add("newClass");
+// Remove Class
+box.classList.remove("highlight");
+// Toggle Class
+box.classList.toggle("toggleClass");
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.getElementById("myId").style.color = "blue";
+
+    let items = document.getElementsByClassName("myClass");
+    items[0].style.fontWeight = "bold";
+
+    let tags = document.getElementsByTagName("p");
+    tags[1].style.color = "green";
+
+    document.querySelector(".box").style.border = "2px solid red";
+
+    document.querySelectorAll(".item").forEach(el => el.style.color = "purple");
+
+    document.getElementById("btn").addEventListener("click", () => {
+      alert("Button clicked!");
+    });
+
+    let newElement = document.createElement("p");
+    newElement.textContent = "This is a new paragraph!";
+    document.getElementById("container").appendChild(newElement);
+
+    document.getElementById("removeMe").remove();
+
+    let newDiv = document.createElement("div");
+    newDiv.textContent = "New Replaced Element";
+    let oldDiv = document.getElementById("replaceThis");
+    oldDiv.parentNode.replaceChild(newDiv, oldDiv);
+
+    let link = document.getElementById("link");
+    console.log(link.getAttribute("href"));
+    link.setAttribute("target", "_blank");
+    console.log(link.hasAttribute("target"));
+
+    let box = document.getElementById("classBox");
+    box.classList.add("newClass");
+    box.classList.remove("highlight");
+    box.classList.toggle("toggleClass");
+  </script>
+
+</body>
+</html>
