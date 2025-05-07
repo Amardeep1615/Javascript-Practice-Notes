@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz App with Score Calculation</title>
+</head>
+<body>
+    <h2>Multiple Choice Quiz</h2>
+
+    <form id="quizForm">
+      <div>
+        <p>1. What is the capital of France?</p>
+        <label>
+          <input type="radio" name="q1" value="Paris" /> Paris
+        </label>
+        <label>
+          <input type="radio" name="q1" value="London" /> London
+        </label>
+        <label>
+          <input type="radio" name="q1" value="Berlin" /> Berlin
+        </label>
+      </div>
+  
+      <div>
+        <p>2. What is 2 + 2?</p>
+        <label>
+          <input type="radio" name="q2" value="3" /> 3
+        </label>
+        <label>
+          <input type="radio" name="q2" value="4" /> 4
+        </label>
+        <label>
+          <input type="radio" name="q2" value="5" /> 5
+        </label>
+      </div>
+  
+      <div>
+        <p>3. Who is the president of the USA?</p>
+        <label>
+          <input type="radio" name="q3" value="Joe Biden" /> Joe Biden
+        </label>
+        <label>
+          <input type="radio" name="q3" value="Donald Trump" /> Donald Trump
+        </label>
+        <label>
+          <input type="radio" name="q3" value="Barack Obama" /> Barack Obama
+        </label>
+      </div>
+  
+      <button type="submit">Submit</button>
+    </form>
+  
+    <h3>Your Score: <span id="score">0</span> / 3</h3>
+    <script src="./domtask10.js"></script>
+</body>
+</html>
