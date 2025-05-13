@@ -1,20 +1,31 @@
-// !-- JavaScript with inline functions -->
 
-    function 
-      const name = document.getElementById("name").value.trim();
-      const password = document.getElementById("password").value.trim();
+  function loginUser() {
+    const loginName = document.getElementById("loginName").value.trim();
+    const loginPassword = document.getElementById("loginPassword").value.trim();
 
-      if (name === "" || password === "") {
-        alert("Please fill in all fields!");
-        return false; // prevent form submission
-      }
+    const storedName = localStorage.getItem("userName");
+    const storedPassword = localStorage.getItem("password");
 
-      localStorage.setItem("userName", name);
-      localStorage.setItem("password", password);
+    const messageBox = document.getElementById("messageBox");
+    messageBox.innerHTML = ""; // Clear previous messages
 
-      alert("Registration successful!");
-
-      window.location.href = "login.html";
-      return false; // prevent actual form submission
+    if (loginName === storedName && loginPassword === storedPassword) {
+      messageBox.innerHTML = `
+        <div class="alert alert-success" role="alert">
+          ✅ Login successful!
+        </div>
+      `;
+      setTimeout(() => {
+        window.location.href = "dashboard.html"; // Or any page you want
+      }, 1000);
+    } else {
+      messageBox.innerHTML = `
+        <div class="alert alert-danger" role="alert">
+          ❌ Invalid username or password!
+        </div>
+      `;
     }
+
+    return false;
+  }
 

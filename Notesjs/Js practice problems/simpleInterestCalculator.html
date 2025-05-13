@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+    <div>
+        <input type="number" class="text-input" id="text">
+        <button onclick="calculate()">Click me!</button>
+    </div>
+    <script>
+        function calculate(principal,rate,time) {
+          return(principal*rate*time)/ 100;        
+        }
+        console.log(calculate(1000,5,2));
+    </script>
+</body>
+</html>
