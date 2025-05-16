@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+    <style>
+     body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    .quiz-container {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Online Quiz App</h1>
+    <p style="background-color: blue; color: white; padding: 10px; text-align: center; ">Welcome to the online Quiz</p>
+
+     <p>What is the capital of Telangana?</p>
+     <label class="option"><input type="radio" name="quiz" value="Mumbai"> Mumbai</label>
+    <label class="option"><input type="radio" name="quiz" value="Hyderabad"> Hyderabad</label>
+    <label class="option"><input type="radio" name="quiz" value="Chennai"> Chennai</label>
+    <label class="option"><input type="radio" name="quiz" value="Bangalore"> Bangalore</label>
+   </div>  
+   <div class="quiz-container">
+    <h2>2. What is the capital of India?</h2>
+    <label><input type="radio" name="q2" value="Delhi"> New-Delhi</label>
+    <label><input type="radio" name="q2" value="Hyderabad"> Hyderabad</label>
+    <label><input type="radio" name="q2" value="Kolkata"> Kolkata</label>
+    <label><input type="radio" name="q2" value="Chandigarh"> Chandigarh</label>
+  </div>
+
+  <div class="quiz-container">
+    <h2>3. Which is the largest planet in the solar system?</h2>
+    <label><input type="radio" name="q3" value="Earth"> Earth</label>
+    <label><input type="radio" name="q3" value="Jupiter"> Jupiter</label>
+    <label><input type="radio" name="q3" value="Venus"> Venus</label>
+    <label><input type="radio" name="q3" value="Mars"> Mars</label>
+  </div>
+
+  <div class="quiz-container">
+    <h2>4. What is the chemical symbol for water?</h2>
+    <label><input type="radio" name="q4" value="H2O"> H2O</label>
+    <label><input type="radio" name="q4" value="O2"> O2</label>
+    <label><input type="radio" name="q4" value="CO2"> CO2</label>
+    <label><input type="radio" name="q4" value="HO2"> HO2</label>
+  </div>
+
+  <div class="quiz-container">
+    <h2>5. Who wrote the Indian national anthem?</h2>
+    <label><input type="radio" name="q5" value="Rabindranath Tagore"> Rabindranath Tagore</label>
+    <label><input type="radio" name="q5" value="Gandhi"> Gandhi</label>
+    <label><input type="radio" name="q5" value="Sarojini Naidu"> Sarojini Naidu</label>
+    <label><input type="radio" name="q5" value="APJ Abdul Kalam"> APJ Abdul Kalam</label>
+  </div>
+ <script src="./setinterval.js"></script>
+</body>
+</html>
