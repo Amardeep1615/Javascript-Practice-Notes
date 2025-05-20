@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Builder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">Quiz Builder</h2>
+
+    <input id="question" type="text" placeholder="Enter question" class="w-full p-2 mb-2 border rounded" />
+    <input id="optionA" type="text" placeholder="Option A" class="w-full p-2 mb-2 border rounded" />
+    <input id="optionB" type="text" placeholder="Option B" class="w-full p-2 mb-2 border rounded" />
+    <input id="optionC" type="text" placeholder="Option C" class="w-full p-2 mb-2 border rounded" />
+    <input id="optionD" type="text" placeholder="Option D" class="w-full p-2 mb-2 border rounded" />
+    <input id="correctOption" type="text" placeholder="Correct Option (A, B, C or D)" class="w-full p-2 mb-4 border rounded" />
+
+    <button onclick="saveQuestion()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Save Question</button>
+    <button onclick="startQuiz()" class="ml-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Start Quiz</button>
+  </div>
+
+  <div id="quizArea" class="max-w-2xl mx-auto mt-8"></div>
+  <div id="result" class="text-center mt-6 text-xl font-semibold text-green-700"></div>
+
+  <script src="./quizApp.js"></script>
+</body>
+</html>
